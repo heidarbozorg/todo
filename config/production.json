@@ -1,0 +1,22 @@
+{
+    "port": 3000,
+    "cns":
+    {
+        "user": "postgres",
+        "host": "localhost",
+        "database": "todo",
+        "port": "5432"
+    },
+    "apiLogger":
+    {
+        "onConsole": true,
+        "onFile": true,
+        "filename": "requests.log"
+    },
+    "errorLogger":
+    {
+        "onConsole": true,
+        "onFile": true,
+        "filename": "error.log"
+    }
+}

@@ -1,0 +1,6 @@
+/node_modules
+/coverage
+/.history
+requests.log
+error.log
+error_test.log

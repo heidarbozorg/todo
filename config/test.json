@@ -1,0 +1,22 @@
+{
+    "port": 3200,
+    "cns":
+    {
+        "user": "postgres",
+        "host": "localhost",
+        "database": "todotests",
+        "port": "5432"
+    },
+    "apiLogger":
+    {
+        "onConsole": false,
+        "onFile": false,
+        "filename": "requests.log"
+    },
+    "errorLogger":
+    {
+        "onConsole": false,
+        "onFile": true,
+        "filename": "error_test.log"
+    }
+}
