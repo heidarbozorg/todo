@@ -25,10 +25,10 @@ describe('/api/subtask', () => {
         }
 
         it('when passing wrong title should return "Bad request"', () => {
-            //const res = await POST({ title: '', todo_id: 1 });
-            //expect(res.status).toBe(400);
-            expect(1).toBe(1);
+            const res = await POST({ title: '', todo_id: 1 });
+            expect(res.status).toBe(400);
         });
+
 
         it('When passing wrong todo_id should return "Bad request"', () => {
             async () => {
@@ -37,7 +37,7 @@ describe('/api/subtask', () => {
             }
         });
 
-        it('when post a not exists parent record, should return "Not found"', () => {
+        it('When post a not exists parent record, should return "Not found"', () => {
             async () => {
                 const apiResult = await POST({ title: 'A title', todo_id: 1 });
                 expect(apiResult.status).toBe(404);
