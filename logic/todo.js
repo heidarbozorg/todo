@@ -4,7 +4,7 @@ const { validateGetAll, validateInsert, validateUpdate } = require('./validation
 const {getError} = require('./common');
 
 /**
- * Get all todo and it's child
+ * Get all records and it's child
  * @param {*} startIndex
  * @param {*} pageSize 
  * @returns 
@@ -19,12 +19,12 @@ module.exports.getAll = async function (startIndex, pageSize) {
     if (error)
         return { status: 400, body: error.details[0].message };
 
-    //Get todo
+    //Get all master records
     const result = await todoDB.getAll(pagingParams.startIndex, pagingParams.pageSize)
     if (!result || !result.data)
         return getError(result);
 
-    //For each todo, get it's child
+    //For each master record, get it's child
     const data = result.data;
     for (var i = 0; i < data.length; i++) {
         const subtasks = await subtasksDB.getAll(data[i].id);

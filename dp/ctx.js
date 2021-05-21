@@ -14,6 +14,10 @@ const pool = new Pool({
 
 var client = null;
 
+async function getClient(pool){
+    return await pool.connect();
+}
+
 /**
  * Manipulating data at database by passing T-SQL syntax
  * @param {*} sqlCommand 
