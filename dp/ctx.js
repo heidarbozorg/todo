@@ -26,6 +26,5 @@ module.exports.executeQuery = async function(sqlCommand) {
     //this line could be improved using connection pool
     if (!client) client = await pool.connect();
 
-    const result = await client.query(sqlCommand);
-    return result;
+    return await client.query(sqlCommand);
 }
