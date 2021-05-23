@@ -69,7 +69,7 @@ describe('/api/subtask', () => {
         async function PUT(data, addr) {
             const res = await request(app)
                     .put(addr || '/api/subtask/abc')
-                    .send({ status: 1 });
+                    .send(data);
             return res;
         }
 
